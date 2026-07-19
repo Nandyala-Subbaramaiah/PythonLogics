@@ -111,7 +111,7 @@ original_str = "python developer"
 reversed_str = ""
  
 # Use a for loop to iterate over the string in reverse order
-for i in range(len(original_str) - 1, -1, -1):
+for i in range(len(original_str) - 1, -1, -1):  -#start stop step 
     reversed_str = reversed_str+original_str[i]
 print(reversed_str)
 
@@ -741,7 +741,7 @@ def unique_chars(word):
 
 word = "developer"
 print(unique_chars(word))  # Output: ['v', 'l', 'r']
-"""
+
 
 def count_substring(string, sub_string):
      start=0
@@ -757,5 +757,103 @@ def count_substring(string, sub_string):
 Str="ABCDCDC"
 Sub_str="CDC"
 count=count_substring(Str, Sub_str)
-print(count)
+print(count)   
+"""
+"""strr="My name is subbaramaiah"
+words=strr.split()
+count_words={}
+for word in words:
+    count_chars = {} 
+    for char in word:
+        if char in count_chars:
+            count_chars[char]+=1
+        else:
+            count_chars[char]=1
+    count_words[word]=count_chars
+print(count_words)
 
+#Using replace() method
+str1="  listen  "
+removing_spaces=str1.replace(" ","")
+print(removing_spaces)
+
+
+#Removing Leading Spaces Only
+s = "   Hello World"
+
+s = s.lstrip()
+print(s)
+
+#Removing Trailing Spaces Only
+s = "Hello World   "
+
+s = s.rstrip()
+print(s)
+
+#Removing Leading and Trailing Spaces
+s = "   Hello World   "
+
+s = s.strip()
+print(s)
+
+
+def reverseString(s):
+    res = []
+  
+    for i in range(len(s) - 1, -1, -1):
+    #len(s) - 1 → start index (the last character of the string)
+
+    # -1 → stop value (the loop runs until index 0, not including -1)
+
+    # -1 → step value (means move backward by one each time)
+        res.append(s[i])
+
+    return ''.join(res)
+
+if __name__ == "__main__":
+    s = "abdcfe"
+    print(reverseString(s))
+ 
+s="ababca"
+c="a"
+s=s.replace(c,"")
+print(s)
+
+def count_substring(string, sub_string):
+     start=0
+     end=len(sub_string)
+     count=0
+     while end <= len(string):
+        if sub_string==string[start:end]:
+            count+=1
+        start+=1
+        end+=1  
+     return count
+  
+Str="ABCDCDC"
+Sub_str="CDC"
+count=count_substring(Str, Sub_str)
+print(count) 
+"""
+def longest_unique_substring(s): 
+    char_set = set()
+    start = 0
+    max_length = 0
+    longest_substring = ""
+    
+    for end in range(len(s)):
+        while s[end] in char_set: #abc/a/->b->c->a/b/->c->/a->b->c->/b->->
+            char_set.remove(s[start]) #start[0],[1],[2],[3],[4],[5],[6]
+            start += 1
+        char_set.add(s[end])
+        current_length = end - start + 1
+        if current_length > max_length:
+            max_length = current_length 
+            longest_substring = s[start:end+1]
+
+    return longest_substring, max_length
+
+# Example usage:
+s = "abcabcbb"
+longest_substring, length = longest_unique_substring(s)
+print(f"The longest substring without repeating characters is: '{longest_substring}' with length {length}")

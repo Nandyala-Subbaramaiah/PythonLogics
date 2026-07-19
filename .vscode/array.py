@@ -1242,10 +1242,9 @@ def first_non_repeated_element(arr):
 arr=[3,5,6,7,3,5]
 result=first_non_repeated_element(arr)
 print(result)
-"""
 
 
-"""
+
 def flatten_list(nested):
     result = []
     for item in nested:
@@ -1256,4 +1255,76 @@ def flatten_list(nested):
     return result  
 
 print(flatten_list([1, [2, 3], [4, [5, 6]], 7]))
+  
+a = [3, 5, 1, 6, 7, 2, 9]
+b = [11, 3, 8]
+
+# Combine the two lists
+combined_list = a + b
+
+# Sort the combined list in descending order without using sort()
+for i in range(len(combined_list)):
+    for j in range(i + 1, len(combined_list)):
+        if combined_list[i] < combined_list[j]:
+            combined_list[i], combined_list[j] = combined_list[j], combined_list[i]
+
+print(combined_list)
+
+def two_sum1(nums,target):
+    left=0
+    right=len(nums)-1
+    while left<right:
+        curent_sum=nums[left]+nums[right]
+        if curent_sum==target:
+            return left,right
+        elif curent_sum<target:
+            left+=1
+        else:
+            right-=1
+   
+    return None
+        
+nums=[2,7,11,15]
+target=9
+res=two_sum1(nums,target)
+print(res)
+
+
+def find_index(arrr,key):
+    for num in range (len(arrr)):
+        if arrr[num] == key:
+            return num
+    return None
+arrr=[2,3,4,5,6,7]
+key=4
+print(find_index(arrr,key))
 """
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = []
+
+odd_num = []
+for num in list1:
+    if num % 2 == 1:  
+        odd_num = [num]+odd_num
+
+print(odd_num)
+
+idx = 0
+for num in list1:
+    if num % 2 == 0:  
+        result += [num]
+    else:  
+        result += [odd_num[idx]]
+        idx += 1
+
+print(result)
+######################## #################### finding index positiion
+idx = 0
+positions = []
+
+for num in list1:
+    if num == 3:
+        positions+=[idx]
+    idx += 1
+
+print(positions)

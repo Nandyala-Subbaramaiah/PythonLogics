@@ -1,4 +1,4 @@
-"""from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
 # Abstract Base Class
 class AnimalType(ABC):
@@ -21,7 +21,6 @@ class Rabbit(AnimalType):
 
 # Creating objects and calling methods
 #a=AnimalType()
-#a.animalType()
 ct = Cat()
 ct.animalType()
 
@@ -29,6 +28,6 @@ dg = Dog()
 dg.animalType()
 
 rb = Rabbit()
-rb.animalType()"""
+rb.animalType()
       
 

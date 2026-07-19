@@ -20,7 +20,7 @@ s='SSDBASB'
 list=[]
 for ch in s:
     if ch not in list:
-        list.append(ch)
+        list.append(ch)   
 Op=''.join(list) 
 print(Op)
 #RemoveDuplicatesInStringSets
@@ -144,7 +144,7 @@ count=0
 for i in String:
     if i=='a':
         
-        count=count+1
+        count+=1
 print("count of given string 'a': "+str(count))
         
 counter=String.count('a')
@@ -160,7 +160,7 @@ import operator as op
 str_str="GeeksForGeeks"
 counter=op.countOf(str_str,"e")
 print("e: ",str(counter))
-
+ 
 
 import operator as op 
 str_str="subbu"
@@ -367,7 +367,7 @@ input_string = "aaabbcc"
 print(compress_string(input_string))  # Output: "3a2b2c"
 """
                         
-def reverse_vowels(s):
+"""def reverse_vowels(s):
     vowels = "aeiouAEIOU"
 
 
@@ -387,3 +387,78 @@ input_string = "oranges"
 output_string = reverse_vowels(input_string)
 print("reversed vowels was: ", output_string)  
 
+
+
+def reverse_substring(s, start,end):
+    chars=list(s)
+
+    while start<end:
+        chars[start],chars[end]=chars[end],chars[start]
+        start+=1        
+        end-=1
+    return "".join(chars)
+s="hello"
+start=0
+end=2 
+print(reverse_substring(s,start,end))
+
+
+# # Example usage
+# input_str = 'hello'
+# start_idx = 0   # starting index of the part to reverse
+# end_idx = 3     # ending index of the part to reverse
+
+# result = reverse_substring(input_str, start_idx, end_idx)
+# print(result)  # Output: lehlo
+
+#method 1
+def count_chars_instr(s):
+    words=s.split()
+    count_words={}
+    for char in words:
+        char_count={}
+        for chars in char:  
+            if chars in char_count:
+                char_count[chars]+=1
+            else:
+                char_count[chars]=1
+            count_words[char]=char_count
+    return count_words
+
+
+#method 2
+input="python developer in 2025"  
+res=count_chars_instr(input)
+print(res)
+
+input="hello"
+part_to_reverse=input[:3]
+reversed=part_to_reverse[::-1]
+
+remaining=input[3:]
+
+out_put=reversed+remaining
+print(out_put)
+
+"""
+
+def areRotations(s1, s2):
+    n = len(s1)
+
+    # generate and check all possible rotations of s1
+    for i in range(n):
+        
+        # if current rotation is equal to s2 return true
+        if s1 == s2:
+            return True
+        
+        # Right rotate s1
+        s1 = s1[-1] + s1[:-1]
+
+    return False
+
+if __name__ == "__main__":
+    s1 = "aab"
+    s2 = "aba"
+
+    print("true" if areRotations(s1, s2) else "false")

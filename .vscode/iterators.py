@@ -53,4 +53,3 @@ iterator_elements=iter(lit1)
 one_element_iterator=iterator_elements.__next__()
 print(one_element_iterator)
    """
-3
