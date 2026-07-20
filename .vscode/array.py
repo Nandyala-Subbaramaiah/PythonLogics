@@ -1,5 +1,5 @@
 """#finding duplicates in array
-arr = [1, 2, 3, 4, 2, 7, 8, 8, 3];     
+arr = [1, 2, 3, 4, 2, 7, 8, 8, 3]     
 for i in range(0,len(arr)): 
     for j in range(i+1,len(arr)):
         if (arr[i]==arr[j]):
@@ -61,8 +61,11 @@ for num in array:
     if num > max_number:
         second_max = max_number
         max_number = num
+        print(">>>>>>>>>>>>",num)
     elif num > second_max and num != max_number:
+        print(">>>><<<<<",num)
         second_max = num
+print(">>>>>>>>>>>",second_max)
 
 print("Second Maximum:", second_max)
 print("Maximum:", max_number)
