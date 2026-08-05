@@ -1,4 +1,4 @@
-"""def add_sprinkles(fun):
+"""def add_sprinkles(fun):   
     def wrapper(*args, **kwargs):
         print("add sprinkles")
         fun(*args, **kwargs)
@@ -55,7 +55,8 @@ def decorator(func):
 @decorator
 def add(a, b):
     return a + b
-
+  
+    
 print(add(5, 3))  # Output: 10 (Instead of 8, because we modify values before addition)
 
 def admin_required(func):

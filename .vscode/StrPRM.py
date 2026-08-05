@@ -606,7 +606,7 @@ print(ans)
 s="subbu"
 ans=""
 for char in s:
-    if char not in ans:55 
+    if char not in ans:
         ans=ans+char
 print(ans)
 
@@ -645,6 +645,8 @@ if __name__ == '__main__':
 #  It can check if a string is composed of alphabetical characters,
 #  alphanumeric characters, digits, etc.
 if __name__ == '__main__':
+
+
     s = input()  # Input string
 
     # Print True/False for each condition
@@ -834,7 +836,7 @@ Str="ABCDCDC"
 Sub_str="CDC"
 count=count_substring(Str, Sub_str)
 print(count) 
-"""
+
 def longest_unique_substring(s): 
     char_set = set()
     start = 0
@@ -843,9 +845,9 @@ def longest_unique_substring(s):
     
     for end in range(len(s)):
         while s[end] in char_set: #abc/a/->b->c->a/b/->c->/a->b->c->/b->->
-            char_set.remove(s[start]) #start[0],[1],[2],[3],[4],[5],[6]
+            char_set.remove(s[start]) #start[0],[1],[2],[3],[4],[5],[6] If any duplicate removed(old value) then only increase the start +1 
             start += 1
-        char_set.add(s[end])
+        char_set.add(s[end]) 
         current_length = end - start + 1
         if current_length > max_length:
             max_length = current_length 
@@ -857,3 +859,42 @@ def longest_unique_substring(s):
 s = "abcabcbb"
 longest_substring, length = longest_unique_substring(s)
 print(f"The longest substring without repeating characters is: '{longest_substring}' with length {length}")
+"""
+# Given a string s, reverse the string without reversing its individual words. Words are separated by dots(.).
+
+# Note: The string may contain leading or trailing dots(.) or multiple dots(.) between two words. The returned string should only have a single dot(.) separating the words, and no extra dots should be included.
+
+# Examples :
+
+# Input: s = "i.like.this.program.very.much"
+# Output: "much.very.program.this.like.i"
+#method1
+def reverseWords(s):
+    words=s.split(".")
+    words=[word for word in words if word]
+    return ".".join(words[::-1])
+
+s="i.like.this.program.very.much"
+print(reverseWords(s))
+
+#method2
+s="i.like.this.program.very.much"
+words=[]
+word=""
+for char in s:
+    if char==".":
+        if word!="":
+            words.append(word)
+            word=""
+    else:
+        word+=char
+if word!="":
+    words.append(word)
+result=""
+for i in range(len(words)-1,-1,-1):
+    result+=words[i]
+    if i!=0:
+        result+="."
+print(result)
+
+

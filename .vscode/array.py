@@ -84,14 +84,6 @@ def missing():
         print(missingnumber)
 missing()
 
-
-
-
-
-
-
-
-
 array=[1,2,3,2,1]
 newarray=array[::-1]
 ans=""
@@ -117,7 +109,7 @@ def first_non_repeated_element(arr):
             count_array[num]=1
     for num in arr:
         if count_array[num]==1:
-         return num        
+        return num        
     return None    
 arr=[3,5,6,7,3,5]
 result=first_non_repeated_element(arr)
@@ -155,6 +147,32 @@ def countelements_zeros_change_position(arr):
 arr=[1,2,0,7,3,0,0,10]
 change_the_position_of_zeros=countelements_zeros_change_position(arr)
 print(change_the_position_of_zeros)
+
+def move_zeros(num):
+    if len(num)==0: # it will execute if there is no length at that time 
+        return []
+    # Recursive case
+    first=num[0] #Every time picks first element of list with help of the function
+    rest=move_zeros(num[1:])
+    # this variable works the add append the elements remining list
+    if first==0:
+        return rest+[0]
+    else:
+        return [first]+rest
+    
+list1=[1,2,0,3,4,5,0,1,0,1,2,5]
+print(move_zeros(list1)) 
+
+
+numbers=[]
+zero=[]
+for num in list1:
+    if num==0:
+        zero.append(num)
+    else:
+        numbers.append(num)
+res=numbers+zero
+print(res)
     
 #2nd method  
 def countelements_zeros_change_position(arr):
@@ -657,7 +675,6 @@ print(obj.solution())
 #fiding duplicates from both sides
 def find_duplicates_array(array1,array2):
  sum_duplicates=0
- seen=set()
  for i in range(0,len(array1)):
      for j in range(0,len(array2)):
          if array1[i]==array2[j]:
@@ -950,7 +967,7 @@ countries_data = {
 }
 
 # Example list of places (cities)
-places = ["Mumbai", "Chicago", "Paris", "Liverpool"]
+places = ["Mumbai", "Chica-go", "Paris", "Liverpool"]
 
 # Get country for each place
 result = find_countries_for_places(countries_data, places)
@@ -1331,3 +1348,21 @@ for num in list1:
     idx += 1
 
 print(positions)
+
+
+def removeDuplicates(arr):
+    n = len(arr)
+    # Start from the second element
+    idx = 1  
+    for i in range(1, n):
+        if arr[i] != arr[i - 1]:
+            arr[idx] = arr[i]
+            idx += 1
+
+    return idx
+
+arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+newSize = removeDuplicates(arr)  
+
+for i in range(newSize): 
+    print(arr[i], end=" ")
