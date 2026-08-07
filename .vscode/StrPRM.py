@@ -898,3 +898,55 @@ for i in range(len(words)-1,-1,-1):
 print(result)
 
 
+def non_repeate(s):
+    n=len(s)  
+    for i  in range(n):
+        found=False
+        for j in range(n):
+            if i!=j and s[i]==s[j]:
+                found=True
+                break
+        if not found:
+            return s[i]
+    return '$'
+    
+s="GeeksForGeeks"
+res=non_repeate(s)
+print(res)
+
+#first repeating chars
+#method1
+class Solution:
+    def firstRepChar(self, s):
+        seen=set()
+        for char in s:
+            if char in seen:
+                return char
+            seen.add(char)
+
+        return #
+
+
+s = "geeksforgeeks"
+
+s1 = Solution()
+print(s1.firstRepChar(s)) 
+
+
+#method2
+class Solution:
+    def firstRepChar(self, s):
+        n = len(s)
+
+        for i in range(1, n):
+            for j in range(i):
+                if s[i] == s[j]:
+                    return s[i]
+
+        return '#'
+
+
+s = "geeksforgeeks"
+
+s1 = Solution()
+print(s1.firstRepChar(s)) 
