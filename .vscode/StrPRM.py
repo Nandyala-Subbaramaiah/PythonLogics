@@ -950,3 +950,20 @@ s = "geeksforgeeks"
 
 s1 = Solution()
 print(s1.firstRepChar(s)) 
+
+#longest_palindrom_substring bruteforce approach
+
+class Solution:
+    def longestPalindrome(self, s):
+        longest=""
+        for i in range(len(s)):
+            for j in range(i, len(s)):
+                sub=s[i:j+1]
+                if sub==sub[::-1]:
+                    if len(sub)>len(longest):
+                        longest=sub
+        return longest
+
+s="forgeeksskeegfor"
+sn=Solution()
+print(sn.longestPalindrome(s))
