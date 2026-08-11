@@ -379,7 +379,7 @@ if __name__ == "__main__" :
     
     return found_vowels
 
-# Example usage:
+# Example usage: 
 string = "SiouqaeLs"
 checking_vowels = check(string)
 print(checking_vowels)
@@ -859,7 +859,7 @@ def longest_unique_substring(s):
 s = "abcabcbb"
 longest_substring, length = longest_unique_substring(s)
 print(f"The longest substring without repeating characters is: '{longest_substring}' with length {length}")
-"""
+
 # Given a string s, reverse the string without reversing its individual words. Words are separated by dots(.).
 
 # Note: The string may contain leading or trailing dots(.) or multiple dots(.) between two words. The returned string should only have a single dot(.) separating the words, and no extra dots should be included.
@@ -967,3 +967,41 @@ class Solution:
 s="forgeeksskeegfor"
 sn=Solution()
 print(sn.longestPalindrome(s))
+"""
+def check(s):
+    s=s.lower()
+    vowels=set("aeiou")
+    found_vowels=set()
+    for char in s:
+        if char in vowels:
+            found_vowels.add(char)
+    if len(found_vowels)==len(vowels):
+        print("accepted")
+    else:
+        print("not accepted")
+    return found_vowels
+
+s="SUBBARAMAIAH"
+res=check(s)
+print(res)
+
+
+class Solution:
+    def smallerAndLarge(self, s: str) -> list[str]:
+        words = s.split()
+
+        min_word = words[0]
+        max_word = words[0]
+
+        for word in words:
+            if len(word) < len(min_word):
+                min_word = word
+
+            if len(word) >= len(max_word):
+                max_word = word
+
+        return [min_word, max_word]
+
+s="Python Developer in String"
+st=Solution()
+print(st.smallerAndLarge(s))
