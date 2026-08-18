@@ -903,7 +903,7 @@ def non_repeate(s):
     for i  in range(n):
         found=False
         for j in range(n):
-            if i!=j and s[i]==s[j]:
+            if i!=j and s[i]==s[j]: #first check postition(i!=j) is diffent and string of char is same char's(s[i]==s[j]) content cheks's both are true, it returns found true or else not found false and returns unique char
                 found=True
                 break
         if not found:
@@ -1005,3 +1005,25 @@ class Solution:
 s="Python Developer in String"
 st=Solution()
 print(st.smallerAndLarge(s))
+
+
+#reversed vowels
+def reverse_Vowels(s):
+    vowels=set("aeiouAEIOU")
+    chars=list(s)
+    left,right=0, len(chars)-1
+    while left<right:
+        while left<right and chars[left] not in vowels:
+            left+=1
+        while left<right and chars[right] not in vowels:
+            right=-1
+
+        chars[left], chars[right]=chars[right],chars[left]
+        left+=1
+        right-=1
+
+        
+    return "".join(chars)
+    
+print(reverse_Vowels("hello"))
+print(reverse_Vowels("leetcode"))
