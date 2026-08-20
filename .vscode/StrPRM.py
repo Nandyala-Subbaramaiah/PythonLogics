@@ -1011,14 +1011,14 @@ print(st.smallerAndLarge(s))
 def reverse_Vowels(s):
     vowels=set("aeiouAEIOU")
     chars=list(s)
-    left,right=0, len(chars)-1
+    left,right=0, len(chars)-1 #calculating len of index 5-1=4, position of left=0 and right=4, left<right=0<4, 1<3, 2<2, 3<1, 4<0
     while left<right:
         while left<right and chars[left] not in vowels:
-            left+=1
+            left +=1
         while left<right and chars[right] not in vowels:
-            right=-1
+            right -=1
 
-        chars[left], chars[right]=chars[right],chars[left]
+        chars[left], chars[right]=chars[right],chars[left] #swaping happing here 
         left+=1
         right-=1
 
