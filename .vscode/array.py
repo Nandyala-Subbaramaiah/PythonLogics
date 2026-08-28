@@ -1290,7 +1290,7 @@ for i in range(len(combined_list)):
 
 print(combined_list)
 
-def two_sum1(nums,target):
+def two_sum1(nums,target):# following sliding window concept 
     left=0
     right=len(nums)-1
     while left<right:
