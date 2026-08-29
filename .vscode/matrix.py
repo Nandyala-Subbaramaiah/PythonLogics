@@ -130,3 +130,72 @@ sorted_flattened = np.sort(v.flatten())
 print("\nFully Sorted Matrix:")
 print(sorted_flattened.reshape(v.shape))
 """
+
+def transpose(mat):
+    return [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))] 
+    # mat[j][i] is used to access the elements of the original matrix in a transposed manner. The outer list comprehension iterates over the columns (i) of the original matrix, while the inner list comprehension iterates over the rows (j). This effectively swaps the rows and columns, resulting in the transposed matrix.
+
+
+mat=[
+ [1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]
+]
+
+res = transpose(mat)
+for row in res:
+    print(row)
+
+#rectangle method 2rows*4columns
+def transpose(mat):
+    return [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+
+mat = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8]
+]
+for row in transpose(mat):
+    print(row)
+
+
+#3×2 matrix
+def transpose(mat):
+    return [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+
+
+mat = [
+    [10, 20],
+    [30, 40],
+    [50, 60]
+]
+for row in transpose(mat):
+    print(row)
+
+
+def transpose(mat):
+    result = []
+
+    for i in range(len(mat[0])):
+        new_row = []
+
+        for j in range(len(mat)):
+            if mat[j][i] >= 0:
+                new_row.append(mat[j][i])
+
+        result.append(new_row)
+
+    return result
+
+
+mat = [
+    [-1, 2],
+    [3, -4],
+    [6, 7]
+]
+
+result = transpose(mat)
+
+for row in result:
+    print(row)
+        
+      
