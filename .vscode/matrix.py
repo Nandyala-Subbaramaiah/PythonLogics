@@ -129,7 +129,7 @@ sorted_flattened = np.sort(v.flatten())
 
 print("\nFully Sorted Matrix:")
 print(sorted_flattened.reshape(v.shape))
-"""
+
 
 def transpose(mat):
     return [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))] 
@@ -197,5 +197,40 @@ result = transpose(mat)
 
 for row in result:
     print(row)
-        
-      
+""" 
+#diagnol matrix
+from ast import main
+
+
+mat = [
+[1, 2, 3], 
+[4, 5, 6],
+[7, 8, 9]
+]
+total=0
+for i in range(len(mat)):
+    # total+=mat[i][i]
+    # print(total)
+    # total+=mat[i][len(mat)-1-i]
+    # print(total)
+    total+=mat[i][i]+mat[i][len(mat)-1-i] 
+
+    """ 
+    i=0
+    main diagnoal mat[0][0] = 1
+    secondary diagonal mat[0][3-1-0]
+                        = mat[0][2]
+                        = 3
+                    total+=1+3=4
+    i = 1
+    main diagnol = mat[1][1] = 5
+    Secondary:
+
+                        mat[1][3-1-1]
+                        = mat[1][1]
+                        total= 5+5=10
+
+    i=2   same loop again here also """
+    #The reason we use one loop is that both diagonals have exactly one element in every row
+print(total)
+
