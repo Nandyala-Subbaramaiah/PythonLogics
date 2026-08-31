@@ -1366,3 +1366,20 @@ newSize = removeDuplicates(arr)
 
 for i in range(newSize): 
     print(arr[i], end=" ")
+
+
+#without using any inbuilt methods moving zeros to end
+arr = [2, 0, 4, 0, 10, 0]
+
+index = 0
+
+for i in range(len(arr)):
+    if arr[i] != 0:
+        arr[index] = arr[i]
+        index += 1
+
+while index < len(arr):
+    arr[index] = 0
+    index += 1
+
+print(arr)

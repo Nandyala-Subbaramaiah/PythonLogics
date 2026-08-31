@@ -197,7 +197,7 @@ result = transpose(mat)
 
 for row in result:
     print(row)
-""" 
+
 #diagnol matrix
 from ast import main
 
@@ -214,8 +214,7 @@ for i in range(len(mat)):
     # total+=mat[i][len(mat)-1-i]
     # print(total)
     total+=mat[i][i]+mat[i][len(mat)-1-i] 
-
-    """ 
+ 
     i=0
     main diagnoal mat[0][0] = 1
     secondary diagonal mat[0][3-1-0]
@@ -230,7 +229,75 @@ for i in range(len(mat)):
                         = mat[1][1]
                         total= 5+5=10
 
-    i=2   same loop again here also """
+    i=2   same loop again here also 
     #The reason we use one loop is that both diagonals have exactly one element in every row
 print(total)
 
+#searches in matrix
+
+mat = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+target = 5
+
+for i in range(len(mat)):
+    for j in range(len(mat[0])):
+        if mat[i][j] == target:
+            print("found")
+            print(f"Element {target} found at position ({i}, {j})")
+            break
+    else:
+        continue
+    break
+
+
+#count of element's of matrix
+mat = [
+    [1, 2, 3],
+    [2, 5, 2],
+    [7, 2, 2]
+]
+
+target = 2
+
+count=0
+for i in range(len(mat)):
+    for j in range(len(mat[0])):
+        if mat[i][j] == target:
+            count += 1
+print(count)
+
+mat=[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+largest=mat[0][0]
+
+for i in range(len(mat)):
+    for j in range(len(mat[0])):
+        if mat[i][j]>largest:
+            largest=mat[i][j]
+print(largest)
+
+mat=[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+max_sum=0
+max_col=0
+
+for i in range(len(mat)):
+    total=0
+    for j in range(len(mat[0])):
+            total+=mat[i][j]
+    if total>max_sum:
+        max_sum=total
+        max_col=j
+print("max_col: ", max_col, "max sum: ", max_sum)
+"""
