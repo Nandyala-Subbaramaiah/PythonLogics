@@ -1,10 +1,10 @@
-class MathOperations:
+"""class MathOperations:
     pi=3.2324
     @classmethod
     def area_of_circle(cls,radius):
         return cls.pi*(radius **2)
 print(MathOperations.pi)
-print(MathOperations.area_of_circle(5))
+print(MathOperations.area_of_circle(5)) 
 
 # static class 
 # demonstrate static methods 
@@ -92,7 +92,7 @@ class ValidName(metaclass=EnforceCapitalization):
 
 # 3. This will instantly raise a TypeError
 class invalidName(metaclass=EnforceCapitalization):
-    pass
+    pass"""
 
 # RULES:METACLASESS
 # The __new__ and __init__ methods must accept four specific arguments in order:
@@ -100,3 +100,5 @@ class invalidName(metaclass=EnforceCapitalization):
 # name: The name of the class being created (string).
 # bases: A tuple of parent classes the class inherits from.
 # dct / namespace: A dictionary containing the class variables and methods.
+
+

@@ -1383,3 +1383,21 @@ while index < len(arr):
     index += 1
 
 print(arr)
+
+#find first ans last position for sorted array
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        first=-1
+        last=-1
+        for i in range(len(nums)):
+            if nums[i]==target:
+                if first==-1:
+                    first=i
+                last=i
+        return [first, last]
+
+s=Solution()
+nums = [5,7,7,8,8,10]
+target=8
+print(s.searchRange(nums,target))
+

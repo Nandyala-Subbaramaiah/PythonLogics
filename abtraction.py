@@ -1,4 +1,4 @@
-gfrom abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
 # Abstract Base Class
 class AnimalType(ABC):
