@@ -900,7 +900,7 @@ print(result)
 
 def non_repeate(s):
     n=len(s)  
-    for i  in range(n):
+    for i in range(n):
         found=False
         for j in range(n):
             if i!=j and s[i]==s[j]: #first check postition(i!=j) is diffent and string of char is same char's(s[i]==s[j]) content cheks's both are true, it returns found true or else not found false and returns unique char
@@ -968,23 +968,6 @@ s="forgeeksskeegfor"
 sn=Solution()
 print(sn.longestPalindrome(s))
 """
-def check(s):
-    s=s.lower()
-    vowels=set("aeiou")
-    found_vowels=set()
-    for char in s:
-        if char in vowels:
-            found_vowels.add(char)
-    if len(found_vowels)==len(vowels):
-        print("accepted")
-    else:
-        print("not accepted")
-    return found_vowels
-
-s="SUBBARAMAIAH"
-res=check(s)
-print(res)
-
 
 class Solution:
     def smallerAndLarge(self, s: str) -> list[str]:

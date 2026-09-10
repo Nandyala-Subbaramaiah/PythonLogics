@@ -1,14 +1,27 @@
-"""#Single Inheritance
+#Single Inheritance
 class Animal:
-    def speak(self):
-        print("Animal Speaking")
+    def __init__(self,name):
+        self.name=name
+    def eat(self):
+        print(f"{self.name} is eating")
 class Dog(Animal):
     def bark(self):
-        print("dog barking")
-d=Dog()
+        print(f"{self.name} is woof")
+d=Dog("Buddy")
 d.bark()
-d.speak()
+d.eat()
 
+#hierachical inheritance and using super() function
+
+class Rat(Animal):
+    def color(self): 
+      super().eat()
+      print(f"{self.name} is black and it's small pet")
+
+rt=Rat("jerry")
+rt.color()
+
+"""
 
 #multilevel inheritance
 class Animal:
@@ -158,3 +171,88 @@ if __name__ == "__main__":
     print(f"Motorbike range: {motorbike.calculate_range()} miles")
     """
 
+#constructor inheritance
+class Employee:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+class Developer(Employee):
+    def __init__(self,name,age,programming_language):
+        super().__init__(name,age)
+        self.programming_language=programming_language
+
+dev=Developer("subbu", 28, "Python")
+print(f"Developer Name: {dev.name}, Age: {dev.age}, Programming Language: {dev.programming_language}")
+
+#Note: Important concept: The child constructor calls the parent constructor using super()
+
+#Multiple inheritance with constructors
+class Employee:
+    def __init__(self,name):
+        self.name=name
+
+class Developer(Employee):
+    def __init__(self,name, programming_language):
+        super().__init__(name)
+        self.programming_language=programming_language
+
+class SeniorDeveloper(Developer):
+    def __init__(self,name,programming_language,experience):
+        super().__init__(name, programming_language)
+        self.experience=experience
+
+
+snr=SeniorDeveloper("subbu", "Python", 5)
+print(f"Senior Developer Name: {snr.name}, Programming Language: {snr.programming_language}, Experience: {snr.experience} years")
+
+#MRO 
+class A:
+    def show(self):
+        print("A")
+
+
+class B(A):
+    def show(self):
+        print("B")
+
+
+class C(A):
+    def show(self):
+        print("C")
+
+
+class D(B, C):
+    pass
+
+
+d = D()
+d.show() #outpu B only because 
+#MRO (Method Resolution Order) determines the order in which base classes are searched when executing a method. In this case, class D inherits from B and C, and since B is listed first, its show() method is called before C's show() method.
+
+#Diamond inheritance problem
+class A:
+    def show(self):
+        print("A")
+
+
+class B(A):
+    def show(self):
+        print("B")
+        super().show()
+
+
+class C(A):
+    def show(self):
+        print("C")
+        super().show()
+
+
+class D(B, C):
+    def show(self):
+        print("D")
+        super().show()
+
+
+d = D()
+d.show()

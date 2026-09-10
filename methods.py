@@ -55,3 +55,21 @@ print(my_instance.static_method())  # Accessing static method
 print(MyClass.static_method())  # Accessing static method without instance
 my_instance.instance_variable = "Modified instance variable"
 print(my_instance.instance_method())  # Accessing instance method
+
+#program of class methods 
+class Dog:
+    species='canine'
+    @classmethod
+    def set_species(cls,species):
+        cls.species=species
+    def __init__(self,name):
+        self.name=name
+    @classmethod
+    def dog_info(cls, name):
+        return f"{name}"
+
+dog=Dog("richchi")
+dogs=Dog.dog_info("romy") #rule#the class method acts as a constructor and allowing objects to be created in diffeerent ways. 
+print(dogs)
+Dog.set_species("wolf") #here modify the class variable species using the class method set_species.
+print(Dog.species)
