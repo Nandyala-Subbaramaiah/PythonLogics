@@ -98,7 +98,6 @@ print(dashboard("rama12@gmail.com", "admin"))  # Authorized
 print(edit_content("editor@example.com", "editor"))  # Authorized
 print(edit_content("viewer@example.com", "viewer"))  # Unauthorized
 
-"""
 
 #its my practiece code
 def roles_required(allowed_roles):
@@ -133,4 +132,18 @@ def changing_chars(func):
 def add(sttr):
     print(f"changing {sttr} character")
 
-add("sub")
+add("sub")"""
+
+def decorator(func):
+    def wrapper(email, role, *args, **kwargs):
+         if role !="admin":
+            return f"user {email} is Unothorized"
+         return func(email, role, *args, **kwargs)
+    return wrapper
+
+@decorator
+def dashboard(email,role):
+     return f"user {email} is authorized"
+
+print(dashboard("Subbu","user")) 
+print(dashboard("Subbu","admin")) 

@@ -1,4 +1,4 @@
-lis1=[1,2,3,4,5]
+"""lis1=[1,2,3,4,5]
 new_list=[num for num in lis1 if num%2==0]
 print(new_list)
 
@@ -40,3 +40,22 @@ def count_element_in_list(nested_list):
 list1 = [1, [2], [3], [[[4]], [5]]]
 output = count_element_in_list(list1)
 print(output)
+
+"""
+def add_items(item, items=[]):
+    print("list address:", id(items))
+    items.append(item)
+    return items
+
+print(add_items(1))
+print(add_items(2)) 
+
+
+# a = [1, 2]
+# b = [3, 4]
+
+# a.extend(b)
+# print("list address:", id(a))
+# print(a)  # [1, 2, 3, 4]
+# print("list address:", id(b))
+# print(b)

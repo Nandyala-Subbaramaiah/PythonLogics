@@ -11,8 +11,8 @@ arr2=["subbu","sai","sree"]
 seen=set()
 for i in range(0,len(arr1)):
       for j in range(0,len(arr2)):
-          if (arr1[i]==arr2[j]): 
-              seen.add(arr1[i])          
+        if (arr1[i]==arr2[j]): 
+            seen.add(arr1[i])          
 print(seen)
 
 #method two
@@ -131,14 +131,14 @@ print(result)
 #iterating array elements and store zeros at line end 
 #input=[1,2,0,7,3,0,0,10]
 #output=[[1, 2, 7, 3, 10, 0, 0, 0]
-def countelements_zeros_change_position(arr):
+def count_elements_zeros_change_position(arr):
     numberelements=[]
     zeroelements=0
     for num in arr:
         if num !=0:
             numberelements.append(num)
         else:
-             zeroelements+=1
+            zeroelements+=1
     numberelements.extend([0]*zeroelements)
     
     
@@ -175,14 +175,14 @@ res=numbers+zero
 print(res)
     
 #2nd method  
-def countelements_zeros_change_position(arr):
+def count_elements_zeros_change_position(arr):
     numberofelements=[num for num in arr if num!=0]
     numberofzeros=[num for num in arr if num==0]
     return numberofelements+numberofzeros
 
         
 arr=[1,2,0,7,3,0,0,10]
-change_the_position_of_zeros=countelements_zeros_change_position(arr)
+change_the_position_of_zeros=count_elements_zeros_change_position(arr)
 print(change_the_position_of_zeros)
 
 
@@ -1318,11 +1318,11 @@ def find_index(arrr,key):
 arrr=[2,3,4,5,6,7]
 key=4
 print(find_index(arrr,key))
-"""
+
 list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 result = []
 
-odd_num = []
+odd_num = [] 
 for num in list1:
     if num % 2 == 1:  
         odd_num = [num]+odd_num
@@ -1401,3 +1401,4 @@ nums = [5,7,7,8,8,10]
 target=8
 print(s.searchRange(nums,target))
 
+"""

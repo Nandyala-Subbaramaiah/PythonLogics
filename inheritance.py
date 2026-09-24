@@ -1,5 +1,5 @@
 #Single Inheritance
-class Animal:
+"""class Animal:
     def __init__(self,name):
         self.name=name
     def eat(self):
@@ -19,9 +19,9 @@ class Rat(Animal):
       print(f"{self.name} is black and it's small pet")
 
 rt=Rat("jerry")
-rt.color()
+rt.color()"""
 
-"""
+
 
 #multilevel inheritance
 class Animal:
@@ -38,7 +38,7 @@ CHD=ChildDog()
 CHD.speak()
 CHD.bark()
 CHD.drink()
-
+"""
 #Multiple inheritance
 class Calculation1:
      def sum(self,a,b):
@@ -169,8 +169,8 @@ if __name__ == "__main__":
 
     motorbike = Motorbike(fuel_efficiency=50, tank_capacity=4, engine_type="single-cylinder")
     print(f"Motorbike range: {motorbike.calculate_range()} miles")
-    """
-
+  
+"""
 #constructor inheritance
 class Employee:
     def __init__(self,name,age):
@@ -187,7 +187,7 @@ print(f"Developer Name: {dev.name}, Age: {dev.age}, Programming Language: {dev.p
 
 #Note: Important concept: The child constructor calls the parent constructor using super()
 
-#Multiple inheritance with constructors
+#Multilevel inheritance with constructors
 class Employee:
     def __init__(self,name):
         self.name=name

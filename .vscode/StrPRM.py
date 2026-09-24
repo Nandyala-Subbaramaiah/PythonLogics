@@ -872,7 +872,7 @@ print(f"The longest substring without repeating characters is: '{longest_substri
 def reverseWords(s):
     words=s.split(".")
     words=[word for word in words if word]
-    return ".".join(words[::-1])
+    return ".".join(words[::-1]) 
 
 s="i.like.this.program.very.much"
 print(reverseWords(s))
@@ -898,7 +898,7 @@ for i in range(len(words)-1,-1,-1):
 print(result)
 
 
-def non_repeate(s):
+def first_non_repeate(s):
     n=len(s)  
     for i in range(n):
         found=False
@@ -911,7 +911,7 @@ def non_repeate(s):
     return '$'
     
 s="GeeksForGeeks"
-res=non_repeate(s)
+res=first_non_repeate(s)
 print(res)
 
 #first repeating chars
@@ -944,7 +944,7 @@ class Solution:
                     return s[i]
 
         return '#'
-
+ 
 
 s = "geeksforgeeks"
 

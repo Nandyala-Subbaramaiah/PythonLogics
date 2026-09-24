@@ -1,4 +1,20 @@
-#finding max value and duplicates in dictionary
+"""Counting occurrences
+Grouping using dictionaries
+Nested dictionaries
+List of tuples → nested dictionary
+List of dictionaries → dictionary indexed by ID
+Dictionary comprehension
+Sorting dictionaries
+Finding max/min
+Merging dictionaries
+get() vs setdefault()
+Dictionary internal implementation / hash table
+Dictionary time complexity
+Nested JSON transformation
+Flattening nested dictionaries
+Real API response transformation"""
+
+"""#finding max value and duplicates in dictionary
 ini_dict = {'a':1, 'b':2, 'c':3, 'd':2}
 new_dict={}
 x=ini_dict.get('a')
@@ -181,3 +197,154 @@ def sum_dict_values(d):
 
 data = {"a": 1, "b": {"c": 2, "d": {"e": 3}}}
 print(sum_dict_values(data))  # ➤ 6
+
+#convert the list of tuples to dictionary with nested structure and occorances count for users
+data = [
+    ("user1", "name", "John"),
+    ("user1", "age", 25),
+    ("user2", "name", "Alice"),
+    ("user2", "age", 30)
+]
+
+result = {}
+
+for user,key,value in data:
+    if user not in result:
+        result[user]={"occorances":0}
+    result[user][key] = value   
+    result[user]["occorances"]+=1
+print(result)
+"""
+
+#convertig jjson formate to dictionary with nested structure
+users=[
+    {
+        "user_id": "user1",
+        "name": "John",
+        "age": 25,
+        "city": "Chennai"
+    },
+    {
+        "user_id": "user2",
+        "name": "Alice",
+        "age": 30,
+        "city": "Bangalore"
+    },
+    {
+        "user_id": "user3",
+        "name": "David",
+        "age": 28,
+        "city": "Hyderabad"
+    }
+]
+
+res={}
+
+for user in users:
+    user_id = user["user_id"]
+    res[user_id] = {
+        "name":user["name"],
+        "age":user["age"],
+        "city":user['city']
+    }
+print(res)
+
+#grouped
+words = ["apple", "ant", "ball", "bat", "cat"]
+
+grouped = {}
+
+for word in words:
+    first_letter = word[0]
+
+    if first_letter not in grouped:
+        grouped[first_letter] = []
+
+    grouped[first_letter].append(word)
+
+print(grouped)
+
+
+students = [
+    ("John", "IT"),
+    ("Alice", "HR"),
+    ("Bob", "IT"),
+    ("David", "HR")
+]
+
+
+grouped_students = {}
+
+for name,department in students:
+    if department not in grouped_students:
+        grouped_students[department]=[]
+    grouped_students[department].append(name)
+
+print(grouped_students)
+
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+grouped = {
+    "even": [],
+    "odd": []
+}
+
+
+for number in numbers:
+    if number % 2 == 0:
+        grouped["even"].append(number)
+    else:
+        grouped["odd"].append(number)
+
+print(grouped)
+
+
+words = ["cat", "dog", "apple", "bat", "orange"]
+
+grouped = {}
+
+for word in words:
+    length = len(word)
+
+    if length not in grouped:
+        grouped[length] = []
+
+    grouped[length].append(word)
+
+print(grouped)
+
+
+transactions = [
+    ("John", 100),
+    ("Alice", 200),
+    ("John", 150)
+]
+
+grouped={}
+
+for name,amount in transactions:
+    if name not in grouped:
+        grouped[name]=[]
+    grouped[name].append(amount)
+print(grouped)
+
+
+employees = [
+    {"name": "John", "city": "Chennai"},
+    {"name": "Alice", "city": "Bangalore"},
+    {"name": "Bob", "city": "Chennai"}
+]
+
+grouped={}
+
+for employee in employees:
+    city = employee["city"]
+    name = employee["name"]
+
+    if city not in grouped:
+        grouped[city] = []
+
+    grouped[city].append(name)
+
+print(grouped)
