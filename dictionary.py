@@ -3,7 +3,7 @@ Grouping using dictionaries
 Nested dictionaries
 List of tuples → nested dictionary
 List of dictionaries → dictionary indexed by ID
-Dictionary comprehension
+Dictionary comprehension 
 Sorting dictionaries
 Finding max/min
 Merging dictionaries
@@ -214,7 +214,7 @@ for user,key,value in data:
     result[user][key] = value   
     result[user]["occorances"]+=1
 print(result)
-"""
+
 
 #convertig jjson formate to dictionary with nested structure
 users=[
@@ -348,3 +348,53 @@ for employee in employees:
     grouped[city].append(name)
 
 print(grouped)
+
+
+# Nested dictionaries
+student_records = {
+    "student1": {
+        "name": "John",
+        "marks": {"math": 90, "science": 85}
+    },
+    "student2": {
+        "name": "Alice",
+        "marks": {"math": 95, "science": 92}
+    }
+}
+
+# Access and update a value in the innermost dictionary
+print(student_records["student1"]["marks"]["math"])
+student_records["student1"]["marks"]["math"] = 96
+
+# Iterate through the nested dictionaries
+for student_id, student in student_records.items():
+    print(student_id, student["name"], student["marks"])
+
+"""
+# Dictionary comprehension problems
+# 1. Map each number from 1 to 5 to its cubes
+cubes = {number: number ** 3 for number in range(1, 6)}
+print(cubes)
+
+# 2. Keep only even numbers and map each to its square
+numbers_to_check = [1, 2, 3, 4, 5, 6]
+even_squares = {
+    number: number ** 2
+    for number in numbers_to_check
+    if number % 2 == 0
+}
+print(even_squares)
+
+# 3. Map each word to its length, keeping words longer than three characters
+words_to_check = ["cat", "apple", "banana", "dog"]
+long_word_lengths = {
+    word: len(word)
+    for word in words_to_check
+    if len(word) > 3
+}
+print(long_word_lengths)
+
+# 4. Swap keys and values; original values should be unique
+scores = {"Alice": 90, "Bob": 85, "Chris": 92}
+scores_by_points = {score: name for name, score in scores.items()}
+print(scores_by_points) 

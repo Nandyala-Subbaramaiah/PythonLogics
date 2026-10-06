@@ -1010,3 +1010,29 @@ def reverse_Vowels(s):
     
 print(reverse_Vowels("hello"))
 print(reverse_Vowels("leetcode"))
+
+
+class Solution:
+    def secFrequent(self, arr):
+        frequency={}
+        for item in arr:
+            if item in frequency:
+                frequency[item]+=1
+            else:
+                frequency[item]=1
+        
+        frequency=list(frequency.values())
+        
+        heighst=max(frequency)
+        
+        second_heighst=-1
+        
+        for count in frequency:
+            if count<heighst:
+                second_heighst=max(second_heighst, count)
+                
+        return second_heighst
+
+arr= ["aaa", "bbb", "ccc", "bbb", "aaa", "aaa"]
+sl=Solution()
+print(sl.secFrequent(arr))
