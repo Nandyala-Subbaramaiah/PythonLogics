@@ -994,7 +994,8 @@ print(st.smallerAndLarge(s))
 def reverse_Vowels(s):
     vowels=set("aeiouAEIOU")
     chars=list(s)
-    left,right=0, len(chars)-1 #calculating len of index 5-1=4, position of left=0 and right=4, left<right=0<4, 1<3, 2<2, 3<1, 4<0
+    left=0
+    right=len(chars)-1 #calculating len of index 5-1=4, position of left=0 and right=4, left<right=0<4, 1<3, 2<2, 3<1, 4<0
     while left<right: #normal check left and right pointers of vowels left side once and right once
         while left<right and chars[left] not in vowels:
             left +=1
@@ -1009,7 +1010,7 @@ def reverse_Vowels(s):
     return "".join(chars)
     
 print(reverse_Vowels("hello"))
-print(reverse_Vowels("leetcode"))
+print(reverse_Vowels("leetcode")) 
 
 
 class Solution:
