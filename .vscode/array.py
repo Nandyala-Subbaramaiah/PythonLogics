@@ -1078,7 +1078,7 @@ print(f"Random elements: {random_elements}")"""
 nums=[2,7,11,15]
 target=9
 result=two_sum(nums, target)
-print(f"printing indeces: ",result)"""
+print(f"printing indeces: ",result)
        
 def two_sum1(nums,target):
     left=0
@@ -1332,7 +1332,7 @@ print(odd_num)
 idx = 0
 for num in list1:
     if num % 2 == 0:  
-        result += [num]
+        result += [num]    
     else:  
         result += [odd_num[idx]]
         idx += 1
@@ -1377,6 +1377,7 @@ for i in range(len(arr)):
     if arr[i] != 0:
         arr[index] = arr[i]
         index += 1
+print(index)
 
 while index < len(arr):
     arr[index] = 0
@@ -1438,3 +1439,37 @@ x=2
 sl=Solution()
 sl.rotateArr(arr, x)
 print(arr)
+"""
+#reverse_arr
+def reverse_arr(arr):
+    reverse_arr=[]
+    for i in arr:
+        reverse_arr=[i]+reverse_arr
+    return reverse_arr
+
+arr=[2,5,5,5,6,6,7]
+print(reverse_arr(arr))
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
