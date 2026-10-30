@@ -592,7 +592,7 @@ Array = [1, 2, 3, 4, 5, 3, 6, 7, 8, 5, 3, 3]
 target = 3
 second_repeated_num_index = find_specific_repeated_index(Array, target)
 print(f"Second occurrence of number {target} is at index: {second_repeated_num_index}")"""
-
+ 
 """
 def find_specific_repeated_index(Array, target):
     #returns the total number of repeating indeces
@@ -888,7 +888,7 @@ def find_missing_numbers(arr, n):
     expected_numbers = set(range(1, n + 1))
     # Create a set of numbers in the given array
     actual_numbers = set(arr)
-    # Find the difference between the two sets
+    # Find the difference between the two sets 
     missing_numbers = expected_numbers - actual_numbers
     return list(missing_numbers)
                                      
@@ -1395,9 +1395,9 @@ class Solution:
                 if first==-1:
                     first=i
                 last=i
-        return [first, last]
+        return [first, last] 
 
-s=Solution()
+s=Solution() 
 nums = [5,7,7,8,8,10]
 target=8
 print(s.searchRange(nums,target))
@@ -1410,7 +1410,6 @@ def find_duplicates_indeces_with_specified_index_range(arr, x):
     if arr[num]==3:
       idx.append(num)
   return {3:idx}
-
 array=[3,3,1,5,1,3]
 x=3
 print(find_duplicates_indeces_with_specified_index_range(array, x))
@@ -1422,7 +1421,7 @@ class Solution:
         
         d=d%n
         
-        def reverse(start,end):
+        def reverse(start,end): #t swaps index 2 with index 4, then stops because the pointers meet:[1, 2, 5, 4, 3]
             while start<end:
                 arr[start], arr[end]=arr[end],arr[start]
                 start+=1
@@ -1439,7 +1438,7 @@ x=2
 sl=Solution()
 sl.rotateArr(arr, x)
 print(arr)
-"""
+
 #reverse_arr
 def reverse_arr(arr):
     reverse_arr=[]
@@ -1449,23 +1448,42 @@ def reverse_arr(arr):
 
 arr=[2,5,5,5,6,6,7]
 print(reverse_arr(arr))
-
+"""
     
+#mutable and immutable data types in python
+def mutable_immutable():
+    # Mutable data types
+    mutable_list = [1, 2, 3]
+    mutable_list[0] = 10  # Modifying the list
+    print("Mutable List:", mutable_list)
+
+    # Immutable data types
+    immutable_tuple = (1, 2, 3)
+    try:
+        immutable_tuple[0] = 10  # This will raise an error
+    except TypeError as e:
+        print("Immutable Tuple Error:", e)
+
+mutable_immutable()
+
+def mutable(item, list=[]): #ite's mutable default argument, which can lead to unexpected behavior if not handled carefully.
+    list.append(item)
+    return list
 
 
+print(mutable(1))  # Output: [1]
+print(mutable(2))  # Output: [2] (unexpected!)
+print(mutable(3, []))  # Output: [3] (unexpected!)
+print(mutable(4))  # Output: [1, 2, 4] (unexpected!
 
+def stope_mutable(item, list=None): #it avoids the pitfalls of mutable default arguments by using None as the default value and initializing a new list inside the function if needed.
+    if list is None:
+        list = []
+    list.append(item)
+    return list
 
-
-
-
-
-
-
-
-
-
-
-
+print(stope_mutable(1))  # Output: [1]
+print(stope_mutable(2))  # Output: [2] (as expected)
 
 
 

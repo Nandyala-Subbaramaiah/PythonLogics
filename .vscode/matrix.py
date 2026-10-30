@@ -42,7 +42,7 @@ res = transpose(mat)
     # Print the result matrix
 print("Result matrix is:")
 for row in res:
-    print(" ".join(map(str, row)))
+    print(row)
 
 
 #addition program 
@@ -140,7 +140,7 @@ mat=[
  [1, 2, 3],
  [4, 5, 6],
  [7, 8, 9]
-]
+] 
 
 res = transpose(mat)
 for row in res:
@@ -271,7 +271,7 @@ for i in range(len(mat)):
 print(count)
 
 mat=[
-    [1,2,3],
+    [1,2,3], 
     [4,5,6],
     [7,8,9]
 ]
@@ -294,7 +294,7 @@ max_col=0
 
 for i in range(len(mat)):
     total=0
-    for j in range(len(mat[0])):
+    for j in range(len(mat[0])): 
             total+=mat[i][j]
     if total>max_sum:
         max_sum=total
