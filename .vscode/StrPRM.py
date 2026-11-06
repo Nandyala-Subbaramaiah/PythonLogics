@@ -779,6 +779,36 @@ str1="  listen  "
 removing_spaces=str1.replace(" ","")
 print(removing_spaces)
 
+#this is for word count in text book page content
+
+strr="My name is Subbaramaiah. My name is repeated."
+words=strr.split()
+count_words={}
+
+for word in words:
+    word=word.strip(".,!?;:")
+    if word in count_words:
+      count_words[word]+=1
+    else:
+      count_words[word]=1
+
+print(count_words)
+
+# important second occorances of the string in text(like notebook page)
+
+strr="My name is Subbaramaiah. My name is repeated."
+words=strr.split()
+second_occurrences_words={}
+
+for word in words:
+    word=word.strip(".,!?;:")
+    if word in second_occurrences_words:
+      second_occurrences_words[word]+=1
+    else:
+      second_occurrences_words[word]=1
+
+    if second_occurrences_words[word]==2:
+        print(f"'{word}' appeared for the second time")
 
 #Removing Leading Spaces Only
 s = "   Hello World"
@@ -906,7 +936,7 @@ def first_non_repeate(s):
             if i!=j and s[i]==s[j]: #first check postition(i!=j) is diffent and string of char is same char's(s[i]==s[j]) content cheks's both are true, it returns found true or else not found false and returns unique char
                 found=True
                 break
-        if not found:
+        if not found: 
             return s[i]
     return '$'
     
@@ -957,8 +987,8 @@ class Solution:
     def longestPalindrome(self, s):
         longest=""
         for i in range(len(s)):
-            for j in range(i, len(s)):
-                sub=s[i:j+1]
+            for j in range(i, len(s)):  
+                sub=s[i:j+1] 
                 if sub==sub[::-1]:
                     if len(sub)>len(longest):
                         longest=sub

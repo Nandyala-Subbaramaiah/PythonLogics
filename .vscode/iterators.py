@@ -53,3 +53,12 @@ iterator_elements=iter(lit1)
 one_element_iterator=iterator_elements.__next__()
 print(one_element_iterator)
    """
+
+#iterator and next methods
+numbers = [10, 20, 30]
+
+iterator = iter(numbers)  #iterator() object is created from the list
+
+print(next(iterator))   # 10
+print(next(iterator))  # 20 # next() method is used to get the next element from the iterator
+print(next(iterator))  # 30
