@@ -22,15 +22,19 @@ merged = pd.merge(emp_df, dept_df, on='dept_id', how='inner')
 print(merged)
 
 
-dept_df = pd.DataFrame({
-    'dept_id': [1, 2, 4],
-    'dept_name': ['HR', 'IT', 'Finance']
+import pandas as pd
+#joines using merge function
+emp_df = pd.DataFrame({
+    "emp_id": [1, 2, 3, 4],
+    "emp_name": ["John", "David", "Smith", "Peter"],
+    "dept_id": [101, 102, 103, 104]
 })
 
-emp_df = pd.DataFrame({
-    'name': ['Alice', 'Bob', 'Charlie'],
-    'dept_id': [1, 2, 3]
-})   
+dept_df = pd.DataFrame({
+    "dept_id": [101, 102, 103, 105],
+    "dept_name": ["Python", "Java", "AWS", "DevOps"]
+})
+
 
 left_join=pd.merge(dept_df, emp_df, on='dept_id', how="left")
 right_join=pd.merge(dept_df, emp_df, on='dept_id', how="right")

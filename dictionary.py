@@ -14,7 +14,7 @@ Nested JSON transformation
 Flattening nested dictionaries
 Real API response transformation"""
 
-"""# Sorting dictionaries
+# Sorting dictionaries
 # Sort by keys
 scores = {'Charlie': 95, 'Alice': 90, 'Bob': 85}
 print('Sorted by key:', dict(sorted(scores.items())))
@@ -36,7 +36,7 @@ for key, value in ini_dict.items():
 print(y,":",x)        
 if value not in new_dict.values():
         new_dict[key]=value
-print(new_dict)
+print(new_dict)  
 
 #finding minimum value here
 ini_dict = {'a':1, 'b':2, 'c':3, 'd':2}
@@ -409,14 +409,14 @@ print(long_word_lengths)
 scores = {"Alice": 90, "Bob": 85, "Chris": 92}
 scores_by_points = {score: name for name, score in scores.items()}
 print(scores_by_points) 
-"""
+
 scores = {'Charlie': 95, 'Alice': 90, 'Bob': 85}
 
 # Sort by key
 print(dict(sorted(scores.items())))
 
 by_value_ascending = dict(
-    sorted(scores.items(), key=lambda item: item[1])
+    sorted(scores.items(), key=lambda item: item[1]) 
 )
 print(by_value_ascending)
 
