@@ -1070,6 +1070,7 @@ sl=Solution()
 print(sl.secFrequent(arr))
 
 #cheking string rotations
+#1 method 1
 def check_rotation(s1, s2):
     if len(s1) != len(s2):
         return False
@@ -1083,3 +1084,17 @@ def check_rotation(s1, s2):
 s1 = input("Enter first string: ").upper()
 s2 = input("Enter second string: ").upper()
 print(check_rotation(s1, s2))  # Output: True or False
+
+#for me prefereable method 2
+def check_rotation1(s1, s2):
+    n=len(s1)
+    for i in range(n):
+        s1 = s1[-1] + s1[:-1]
+        if s1 == s2:
+            return True
+    return False
+
+# Example usage:
+s1 = input("Enter first string: ").upper()
+s2 = input("Enter second string: ").upper()
+print(check_rotation1(s1, s2)) 

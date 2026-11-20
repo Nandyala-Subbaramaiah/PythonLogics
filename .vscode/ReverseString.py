@@ -440,6 +440,12 @@ remaining=input[3:]
 out_put=reversed+remaining
 print(out_put)
 
+Dynamic approach reverse frrst n chars
+def reverse_first_n(text, n):
+  return text[:n][::-1] + text[n:]
+
+print(reverse_first_n("subbu", 2))
+print(reverse_first_n("hello", 3))
 """
 
 def areRotations(s1, s2):
@@ -452,11 +458,11 @@ def areRotations(s1, s2):
         if s1 == s2:
             return True
         
-        # Right rotate s1
-        s1 = s1[-1] + s1[:-1]
+        # Right rotate s1 Joining them moves the last character to the front.
+        s1 = s1[-1] + s1[:-1] # s1[:-1] gets everything except the last character.  s1[-1] gets the last character.
 
     return False
-
+ 
 if __name__ == "__main__":
     s1 = "aab"
     s2 = "aba"
