@@ -25,18 +25,19 @@ print(Dog.species)
 #staticmethod
 class Dog:
     @staticmethod
+    
     def bark():
         print("woof woof!")
 Dog.bark()
 """
 # //////////////////////////////////// class methods, static methods, instance methods ////////////////////////
 class MyClass:
-    class_variable = "I am a class variable"
+    class_variable = "I am a class variable" 
 
     def __init__(self, instance_variable):
         self.instance_variable = instance_variable
 
-    @classmethod # class methods take cls as the first parameter, allowing them to access class variables and methods.
+    @classmethod #1 class methods take cls as the first parameter, allowing them to access class variables and methods.
     def class_method(cls):
         cls.class_variable = "Class variable modified by class method"
         return f"Class method called. Accessing: {cls.class_variable}"
