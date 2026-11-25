@@ -748,7 +748,7 @@ print(unique_chars(word))  # Output: ['v', 'l', 'r']
 def count_substring(string, sub_string):
      start=0
      end=len(sub_string)
-     count=0
+     count=0 
      while end <= len(string):
         if sub_string==string[start:end]:
             count+=1
@@ -760,6 +760,7 @@ Str="ABCDCDC"
 Sub_str="CDC"
 count=count_substring(Str, Sub_str)
 print(count)   
+
 """
 """strr="My name is subbaramaiah"
 words=strr.split()
@@ -1069,6 +1070,7 @@ sl=Solution()
 print(sl.secFrequent(arr))
 
 #cheking string rotations
+#1 method 1
 def check_rotation(s1, s2):
     if len(s1) != len(s2):
         return False
@@ -1082,3 +1084,17 @@ def check_rotation(s1, s2):
 s1 = input("Enter first string: ").upper()
 s2 = input("Enter second string: ").upper()
 print(check_rotation(s1, s2))  # Output: True or False
+
+#for me prefereable method 2
+def check_rotation1(s1, s2):
+    n=len(s1)
+    for i in range(n):
+        s1 = s1[-1] + s1[:-1]
+        if s1 == s2:
+            return True
+    return False
+
+# Example usage:
+s1 = input("Enter first string: ").upper()
+s2 = input("Enter second string: ").upper()
+print(check_rotation1(s1, s2)) 

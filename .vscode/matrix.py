@@ -202,7 +202,7 @@ for row in result:
 from ast import main
 
 
-"""mat = [
+mat = [
 [1, 2, 3], 
 [4, 5, 6],
 [7, 8, 9]
@@ -215,7 +215,7 @@ for i in range(len(mat)):
     # print(total)
     total+=mat[i][i]+mat[i][len(mat)-1-i] 
  
-    i=0
+""" i=0
     main diagnoal mat[0][0] = 1
     secondary diagonal mat[0][3-1-0]
                         = mat[0][2]
@@ -229,10 +229,10 @@ for i in range(len(mat)):
                         = mat[1][1]
                         total= 5+5=10
 
-    i=2   same loop again here also 
+    i=2   same loop again here also """
     #The reason we use one loop is that both diagonals have exactly one element in every row
-print(total)
-"""
+print(">>>>>>>><<<<<<<<<",total)
+
 #searches in matrix
 
 mat = [
