@@ -41,11 +41,11 @@ class MyClass:
     def class_method(cls):
         cls.class_variable = "Class variable modified by class method"
         return f"Class method called. Accessing: {cls.class_variable}"
-
+    
     @staticmethod # static method doesn't take self or cls as the first parameter, so it cannot access instance or class variables directly.
     def static_method():
         return "Static method called. No access to class or instance variables."
-
+    
     def instance_method(self): # instance methods take self as the first parameter, allowing them to access instance variables and methods.
         return f"Instance method called. Accessing: {self.instance_variable}"
 
