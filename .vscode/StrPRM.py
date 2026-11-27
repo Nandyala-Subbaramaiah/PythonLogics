@@ -1098,3 +1098,23 @@ def check_rotation1(s1, s2):
 s1 = input("Enter first string: ").upper()
 s2 = input("Enter second string: ").upper()
 print(check_rotation1(s1, s2)) 
+
+# string rotation for using temp variable optimized approach
+class Solution:
+    def areRotations(self, s1, s2):
+
+        if len(s1) != len(s2):
+            return False
+
+        temp = s1 + s1 #[aab] + [aab] = [aabaab]
+
+        if s2 in temp:
+            return True
+
+        return False
+
+s1 = input("enter a string")
+s2 = input("enter a string")
+
+solution = Solution()
+print("true" if solution.areRotations(s1, s2) else "false")

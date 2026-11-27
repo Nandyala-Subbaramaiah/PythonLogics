@@ -447,24 +447,3 @@ def reverse_first_n(text, n):
 print(reverse_first_n("subbu", 2))
 print(reverse_first_n("hello", 3))
 """
-
-def areRotations(s1, s2):
-    n = len(s1)
-
-    # generate and check all possible rotations of s1
-    for i in range(n):
-        
-        # if current rotation is equal to s2 return true
-        if s1 == s2:
-            return True
-        
-        # Right rotate s1 Joining them moves the last character to the front.
-        s1 = s1[-1] + s1[:-1] # s1[:-1] gets everything except the last character.  s1[-1] gets the last character.
-
-    return False
- 
-if __name__ == "__main__":
-    s1 = "aab"
-    s2 = "aba"
-
-    print("true" if areRotations(s1, s2) else "false")
