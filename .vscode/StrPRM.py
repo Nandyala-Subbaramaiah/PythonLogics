@@ -874,7 +874,7 @@ def longest_unique_substring(s):
     max_length = 0
     longest_substring = ""
     
-    for end in range(len(s)):
+    for end in range(len(s)):-
         while s[end] in char_set: #abc/a/->b->c->a/b/->c->/a->b->c->/b->->
             char_set.remove(s[start]) #start[0],[1],[2],[3],[4],[5],[6] If any duplicate removed(old value) then only increase the start +1 
             start += 1
